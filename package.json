@@ -1,0 +1,15 @@
+{
+  "name": "create_pds_file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "konrad hopek",
+  "license": "ISC",
+  "dependencies": {
+    "ag-psd": "^11.1.6",
+    "canvas": "^2.6.1"
+  }
+}
