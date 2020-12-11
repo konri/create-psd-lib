@@ -1,4 +1,4 @@
-PATH_CARS=
-PATH_BACKGROUND=
-PATH_SHADOW=
-PATH_OUTPUT=
+PATH_CARS=/Users/I529625/workspace/education/stuffs/create_pds_file/cars
+PATH_BACKGROUND=/Users/I529625/workspace/education/stuffs/create_pds_file/const/BACKGROUND/3BACKGROUND.png
+PATH_SHADOW=/Users/I529625/workspace/education/stuffs/create_pds_file/const/SHADOW
+PATH_OUTPUT=/Users/I529625/workspace/education/stuffs/create_pds_file/output

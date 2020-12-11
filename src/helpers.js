@@ -2,7 +2,7 @@ const { createCanvas, Image } = require('canvas');
 const fs = require('fs');
 const pathLib = require('path');
 const SUPPORT_IMAGE_EXTENSIONS = ['.png'];
-const { writePsdBuffer, initializeCanvas } = require('ag-psd');
+const { writePsdBuffer, readPsd,  initializeCanvas } = require('ag-psd');
 
 
 exports.getConfigPaths = function() {
@@ -56,6 +56,7 @@ exports.parseFileName = function(fileName) {
 
 exports.getOutputNameFromPath = function(path) {
   const split = path.split('/');
+  // const split = path.split('\\');  //windows
   return split[split.length - 1]
 };
 
@@ -99,7 +100,19 @@ exports.createCanvasFromImage = function(img) {
   return canvas;
 };
 
-exports.generatePsd = function(psdConfig, outputPath) {
+exports.generatePsd = function(psdConfig) {
+  return writePsdBuffer(psdConfig);
+};
+
+exports.readPsdFile = function(psdConfig) {
+  return readPsd(psdConfig);
+};
+
+exports.generateAndSavePsdFromConfig = function(psdConfig, outputPath) {
   const buffer = writePsdBuffer(psdConfig);
+  fs.writeFileSync(outputPath, buffer);
+};
+
+exports.generateAndSavePsdFromBuffer = function(buffer, outputPath) {
   fs.writeFileSync(outputPath, buffer);
 };
